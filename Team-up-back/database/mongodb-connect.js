@@ -4,7 +4,7 @@ const connectMongoDatabase = async () => {
 	mongoose.set('strictQuery', true);
 
 	const connected = await mongoose.connect(
-		'mongodb+srv://saba123:saba123@saba.wwz5a5f.mongodb.net/'
+		'mongodb+srv://test:test@team-up.qzylt.mongodb.net/'
 	);
 
 	console.log((`Mongo Connected: ${connected.connection.host}`));

@@ -1,92 +1,87 @@
-.featured-projects-title{ 
-  margin-top:80px;
+.featured-projects-title { 
+  margin-top: 80px;
+  text-align: center;
+  font-size: 32px;
+  color: #333;
 
-  @media (max-width: 431px) {
+  @media (max-width: 768px) {
     font-size: 28px;
-    display: flex;
-    justify-content: start;
-    padding-left: 40px;
+    margin-top: 60px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin-top: 40px;
   }
 }
 
 .projects-container {
-  width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  margin-bottom: 50px;
+  padding: 20px;
 }
 
+// Desktop view
 .desktop-view {
   display: block;
-  
+
   @media (max-width: 768px) {
     display: none;
   }
 }
 
+// Mobile view
 .mobile-view {
   display: none;
-  
+
   @media (max-width: 768px) {
     display: block;
-    padding: 0 20px;
   }
 }
 
-.swiper-container {
+.mobile-swiper {
   padding: 20px 0 40px;
-  overflow: visible;
-  
-  :global {
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #386628;
-      width: 40px;
-      height: 40px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      
-      &::after {
-        font-size: 20px;
-      }
-    }
+
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    color: #386628;
     
-    .swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-      background: #ddd;
-      opacity: 1;
-      
-      &-active {
-        background: #386628;
-      }
+    &:after {
+      font-size: 24px;
     }
+
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+
+  :global(.swiper-pagination-bullet) {
+    background: #ddd;
+  }
+  
+  :global(.swiper-pagination-bullet-active) {
+    background: #386628;
   }
 }
 
-.swiper-slide {
-  height: auto;
+.slide-content {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
-.projects-side {
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  justify-items: center;
+  padding: 20px;
 
-  @media screen and (max-width: 1980px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media screen and (max-width: 1600px) {
+  @media (max-width: 1400px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media screen and (max-width: 1200px) {
+  @media (max-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -96,18 +91,23 @@
   height: 400px;
   border: 1px solid #dddddd;
   background-color: #f5f5f5;
-  -webkit-box-shadow: 2px 2px 13px 0px rgba(186,186,186,1);
-  -moz-box-shadow: 2px 2px 13px 0px rgba(186,186,186,1);
-  box-shadow: 2px 2px 13px 0px rgba(186,186,186,1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 
-  @media screen and (max-width: 431px) {
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 480px) {
     width: 100%;
     max-width: 300px;
-    margin: 0 auto;
+    height: auto;
+    min-height: 380px;
   }
 
   .project-picture {
-    background-size: cover;
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -116,35 +116,48 @@
   .project-description {
     padding: 20px;
 
-    p {
-      color: #666666;
+    h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+      font-size: 18px;
     }
 
-    .client-profile {
-      background-size: cover;
-      height: 35px;
-      width: 35px;
-      border-radius: 50%;
+    p {
+      color: #666666;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 15px;
     }
-    
+
     .client-side {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-
-      h5 {
-        color: #386628;
-      }
+      margin-top: 20px;
 
       div {
         display: flex;
-        gap: 13px;
         align-items: center;
+        gap: 10px;
+
+        .client-profile {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
 
         p {
+          margin: 0;
           color: #666666;
+          font-size: 14px;
         }
+      }
+
+      h5 {
+        color: #386628;
+        margin: 0;
+        font-size: 16px;
       }
     }
   }

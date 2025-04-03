@@ -16,7 +16,6 @@ const FindDevelopers = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const signedInUser = JSON.parse(localStorage.getItem("user"));
     const [errorMessage, setErrorMessage] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         console.log("Fetching developers...");
@@ -48,7 +47,6 @@ const FindDevelopers = () => {
     };
 
     const applyFilters = () => {
-        setIsLoading(true);
         let filtered = [...developers];
 
         if (selectedSkills.length > 0) {
@@ -68,12 +66,7 @@ const FindDevelopers = () => {
                 return devPrice !== null && devPrice <= maxPrice;
             });
         }
-
-        // Simulate loading time
-        setTimeout(() => {
-            setFilteredDevelopers(filtered);
-            setIsLoading(false);
-        }, 2500); // 2500 milliseconds = 2.5 seconds
+        setFilteredDevelopers(filtered);
     };
 
     const handleRequestClick = async (developer) => {
@@ -142,7 +135,7 @@ const FindDevelopers = () => {
     };
 
     return (
-        <>
+        <div className={classes["body"]}>
             <Navbar />
             <br /><br />
             {errorMessage && (
@@ -220,12 +213,7 @@ const FindDevelopers = () => {
                     </button>
                 </div>
                 <div className={classes["dev_side"]}>
-                    {isLoading ? (
-                        <div className={classes["loading-container"]}>
-                            <div className={classes["loading-spinner"]}></div>
-                            <p>Finding developers...</p>
-                        </div>
-                    ) : filteredDevelopers.length > 0 ? (
+                    {filteredDevelopers.length > 0 ? (
                         filteredDevelopers.map((dev) => (
                             <div key={dev._id} className={classes["developers"]}>
                                 <div>
@@ -315,7 +303,7 @@ const FindDevelopers = () => {
             )}
             <br/><br/><br/><br/><br/><br/>
             <Footer />
-        </>
+        </div>
     )
 }
 

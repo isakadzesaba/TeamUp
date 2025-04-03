@@ -127,6 +127,7 @@ const Projects = () => {
 
             const groupSize = Math.ceil(allDevelopers.length / 3);
 
+ 
             const Team1 = allDevelopers.slice(0, groupSize);
             const Team2 = allDevelopers.slice(groupSize, groupSize * 2);
             const Team3 = allDevelopers.slice(groupSize * 2);
@@ -146,8 +147,6 @@ const Projects = () => {
             setShowCreateForm(false);
         } catch (error) {
             console.error("Error fetching developers:", error);
-        } finally {
-            setIsSearching(false);
         }
     };
 
@@ -235,12 +234,6 @@ const Projects = () => {
 
     return (
         <div className={styles.projectsPage}>
-            {isSearching && (
-                <div className={styles.loadingOverlay}>
-                    <div className={styles.fullscreenSpinner}></div>
-                    <div className={styles.loadingText}>Finding Projects...</div>
-                </div>
-            )}
             <Navbar />
             <div className={styles.projectsContainer}>
                 <div className={styles.header}>
@@ -257,6 +250,12 @@ const Projects = () => {
 
                 {showCreateForm && (
                     <div className={styles.modal} onClick={handleModalClick}>
+                        {isSearching && (
+                            <div className={styles.loadingOverlay}>
+                                <div className={styles.fullscreenSpinner}></div>
+                                <div className={styles.loadingText}>Finding Projects...</div>
+                            </div>
+                        )}
                         <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
                             <h2 className={styles.modalTitle}>Create New Project</h2>
                             <div className={styles.modalBody}>
@@ -420,9 +419,7 @@ const Projects = () => {
                                     </div>
 
                                     <div className={styles.formButtons}>
-                                        <button type="submit" disabled={isSearching}>
-                                            Start Searching
-                                        </button>
+                                        <button type="submit">Start Searching</button>
                                         <button type="button" onClick={() => setShowCreateForm(false)}>Cancel</button>
                                     </div>
                                 </form>

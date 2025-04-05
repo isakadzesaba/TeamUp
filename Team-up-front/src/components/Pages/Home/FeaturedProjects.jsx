@@ -46,7 +46,6 @@ const FeaturedProjects = () => {
                         <ProjectCard />
                         <ProjectCard />
                         <ProjectCard />
-                        <ProjectCard />
                     </div>
                 </div>
 
@@ -60,11 +59,6 @@ const FeaturedProjects = () => {
                         pagination={{ clickable: true }}
                         className={classes['mobile-swiper']}
                     >
-                        <SwiperSlide>
-                            <div className={classes['slide-content']}>
-                                <ProjectCard />
-                            </div>
-                        </SwiperSlide>
                         <SwiperSlide>
                             <div className={classes['slide-content']}>
                                 <ProjectCard />

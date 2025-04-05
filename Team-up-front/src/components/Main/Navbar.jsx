@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import classes from "../../modules/Navbar.module.scss";
-import profileImg from "../../assets/Home-page-pics/profile-pic.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/teamup-logo.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
     const [profileMenu, setProfileMenu] = useState(false);
@@ -83,14 +84,15 @@ const Navbar = () => {
             <div className={classes["nav-right"]}>
                 <button className={classes["profile-btn"]} onClick={dropDownHandler}>
                     <div>
-                        <img src={profileImg} className={classes["profile-pic"]} alt="Profile" />
-                        <h3>{userName}</h3>
+                        <FontAwesomeIcon icon={faUser} className={classes["profile-icon"]} />
+                        <h3 className={classes["active"]}>{userName}</h3>
                     </div>
                 </button>
 
 
                 {profileMenu && (
                     <ul className={classes["dropdown-menu"]}>
+                        <li className={classes["user-li"]}><a className={classes["user"]}>{userName}</a></li>
                         <li><a onClick={() => navigate("/profile")}>Profile</a></li>
                         <li><a onClick={() => navigate("/Messenger")}>Messenger</a></li>
                         <li><a onClick={() => navigate("/Request")}>Requests</a></li>

@@ -1,24 +1,24 @@
-.featured-projects-title { 
-  margin-top: 80px;
+.featured-projects-title {
+  margin-top: 8dvh;
   text-align: center;
   font-size: 32px;
   color: #333;
 
   @media (max-width: 768px) {
     font-size: 28px;
-    margin-top: 60px;
+    margin-top: 6dvh;
   }
 
   @media (max-width: 480px) {
     font-size: 24px;
-    margin-top: 40px;
+    margin-top: 4dvh;
   }
 }
 
 .projects-container {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2dvh;
 }
 
 // Desktop view
@@ -40,14 +40,14 @@
 }
 
 .mobile-swiper {
-  padding: 20px 0 40px;
+  padding: 2dvh 0 4dvh;
 
   :global(.swiper-button-next),
   :global(.swiper-button-prev) {
     color: #386628;
-    
+
     &:after {
-      font-size: 24px;
+      font-size: 2.4dvh;
     }
 
     @media (max-width: 480px) {
@@ -58,7 +58,7 @@
   :global(.swiper-pagination-bullet) {
     background: #ddd;
   }
-  
+
   :global(.swiper-pagination-bullet-active) {
     background: #386628;
   }
@@ -67,15 +67,15 @@
 .slide-content {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 1dvh;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 3dvh;
   justify-items: center;
-  padding: 20px;
+  padding: 2dvh;
 
   @media (max-width: 1400px) {
     grid-template-columns: repeat(3, 1fr);
@@ -87,11 +87,11 @@
 }
 
 .projects {
-  width: 300px;
-  height: 400px;
+  width: 30dvh;
+  height: 40dvh;
   border: 1px solid #dddddd;
   background-color: #f5f5f5;
-  border-radius: 8px;
+  border-radius: 0.8dvh;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
@@ -102,47 +102,48 @@
 
   @media (max-width: 480px) {
     width: 100%;
-    max-width: 300px;
+    max-width: 30dvh;
     height: auto;
-    min-height: 380px;
+    min-height: 38dvh;
   }
 
   .project-picture {
     width: 100%;
-    height: 200px;
+    height: 20dvh;
     object-fit: cover;
   }
 
   .project-description {
-    padding: 20px;
+    padding: 2dvh;
 
     h4 {
       margin: 0 0 10px 0;
       color: #333;
-      font-size: 18px;
+      font-size: 1.8dvh;
     }
 
     p {
       color: #666666;
-      font-size: 14px;
+      font-size: 1.4dvh;
       line-height: 1.4;
-      margin-bottom: 15px;
+      margin-bottom: 1.5dvh;
     }
 
     .client-side {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 2dvh;
+      transform: translate(0, -2dvh);
 
       div {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 1dvh;
 
         .client-profile {
-          width: 35px;
-          height: 35px;
+          width: 3.5dvh;
+          height: 3.5dvh;
           border-radius: 50%;
           object-fit: cover;
         }
@@ -150,14 +151,14 @@
         p {
           margin: 0;
           color: #666666;
-          font-size: 14px;
+          font-size: 1.4dvh;
         }
       }
 
       h5 {
         color: #386628;
         margin: 0;
-        font-size: 16px;
+        font-size: 1.6dvh;
       }
     }
   }

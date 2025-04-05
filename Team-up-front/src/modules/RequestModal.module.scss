@@ -21,9 +21,9 @@
 
 .modal-content {
     background-color: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    width: 450px;
+    border-radius: 1.2dvh;
+    padding: 3dvh;
+    width: 45dvh;
     max-width: 90%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transform: scale(0.8);
@@ -38,20 +38,20 @@
 }
 
 .modal-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.5dvh;
     color: #333;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 2dvh;
     text-align: center;
 }
 
 .modal-content input,
 .modal-content textarea {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 1.2dvh;
+    margin: 1dvh 0;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 0.8dvh;
     font-size: 1rem;
     background-color: #f9f9f9;
     transition: border-color 0.3s ease;
@@ -59,38 +59,37 @@
 
 .modal-content input:focus,
 .modal-content textarea:focus {
-    border-color: #4318d1;
+    border-color: #efd135;
     outline: none;
 }
 
 .modal-content button {
     width: 100%;
-    padding: 14px;
-    margin-top: 15px;
-    background-color: #4318d1;
-    color: white;
+    padding: 1.4dvh;
+    margin-top: 1.5dvh;
+    background-color: #efd135;
+    color: #000;
     font-weight: bold;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.8dvh;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .modal-content button:hover {
-    background-color: #250e7e;
+    background-color: #bda21d;
 }
 
 .close-btn {
-    background-color: transparent;
-    color: #4318d1;
-    padding: 10px 20px;
-    border-radius: 5px;
+    background-color: #efd135;
+    color: #000;
+    padding: 1dvh 2dvh;
+    border-radius: 0.5dvh;
     transition: background-color 0.3s ease;
 }
 
 .close-btn:hover {
-    background-color: #4318d1;
-    color: white;
+    background-color: #bda21d;
 }
 
 .successBox {

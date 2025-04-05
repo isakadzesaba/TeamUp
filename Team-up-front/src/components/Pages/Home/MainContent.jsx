@@ -31,7 +31,7 @@ const MainContent = () => {
             <div className={classes["main-container"]}>
                 <div className={classes["left-side"]}>
                     <div className={classes["content-wrapper"]}>
-                        <h1 className={classes["center-text"]}>Connect with top developers and clients worldwide</h1>
+                        <h1 className={classes["center-text"]} style={{ fontSize: "5.6dvh" }}>Connect with <mark>top</mark> developers and clients worldwide</h1>
                         <p className={classes["center-text"]}>
                             Lorem Ipsum is simply dummy
                             text of the printing and
@@ -50,15 +50,15 @@ const MainContent = () => {
                         <br /><br />
                         <div className={classes["result-side"]}>
                             <div>
-                                <h2>6K+</h2>
+                                <h2><mark>6K+</mark></h2>
                                 <p className={classes["p"]}>Active Developers</p>
                             </div>
                             <div>
-                                <h2>5k+</h2>
+                                <h2><mark>5k+</mark></h2>
                                 <p className={classes["p"]}>Projects Completed</p>
                             </div>
                             <div>
-                                <h2>8k+</h2>
+                                <h2><mark>8k+</mark></h2>
                                 <p className={classes["p"]}>Happy Clients</p>
                             </div>
                         </div>
